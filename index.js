@@ -6,29 +6,41 @@ function isPresent(item) {
 }
 
 function validateInput(item) {
-    // Check if there are consecutive operators
     if (/([+*/-])\1+/.test(screen.value + item)) {
         return "";
     } else {
         return item;
     }
-}
-
-
+}0
+let flag = true;
+let changeTextButton = document.getElementById("q");
+let changedButton = document.getElementById("a");
+changeTextButton.addEventListener("click", function () {
+    if (flag) {
+        changedButton.innerHTML = "√";
+        flag = false;
+    } else {
+        changedButton.innerHTML = "/";
+        flag = true;
+    }
+});
 let buttons = document.querySelectorAll("button");
 for (let button of buttons) {
     button.addEventListener('click', (e) => {
         let item = e.target.innerText;
-
         switch (item) {
             case 'AC':
                 currentValue = "";
                 break;
-            case 'DEL':
+            case '⌦':
                 currentValue = currentValue.slice(0, -1);
                 break;
             case '%':
                 currentValue = (eval(currentValue) / 100).toString();
+                break;
+                case '/':
+                    item = '/'
+                currentValue = currentValue += validateInput(item)
                 break;
             case '7':
                 currentValue += 7;
@@ -42,7 +54,6 @@ for (let button of buttons) {
             case 'x':
                 item = '*';
                 currentValue += validateInput(item)
-                //console.log( currentValue);
                 break;
             case '4':
                 currentValue += 4;
@@ -70,8 +81,9 @@ for (let button of buttons) {
                 item = '+';
                 currentValue += validateInput(item)
                 break;
-            case '$':
-                //currentValue += 7;
+            case '√':
+                item = '√'
+                currentValue = item + Math.sqrt(parseFloat(currentValue));
                 break;
             case '0':
                 currentValue += 0;
@@ -87,13 +99,10 @@ for (let button of buttons) {
                 } catch (error) {
                     screen.value = "sorry";
                 }
-
                 break;
             default:
-
                 break;
         }
-
         screen.value = currentValue;
     });
 }

@@ -1,27 +1,42 @@
+body {
+    margin: 100px;
+}
+
 .main-container {
     width: fit-content;
     height: fit-content;
     margin: auto;
-    padding: 10px;
     height: fit-content;
     align-items: center;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    background-color: aqua;
+    background-color: rgb(184, 221, 221);
+    border: 2px solid grey;
+    border-radius: 20px;
 }
 
 .text-box {
+
     display: flex;
-    gap: 5px;
-    padding: 5px;
+    gap: px;
+    direction: ltr;
+    padding-bottom: 10px;
     width: 100%;
-    height: 50px;
+    height: 60px;
+    top: 0px;
+
 }
 
 #screen {
+    border-radius: 20px;
+    background-color: rgb(165, 191, 216);
     height: 100%;
     width: 100%;
+    font-size:x-large;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    color: dimgrey;
 }
 
 .btn-container {
@@ -30,7 +45,6 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-
 }
 
 .row {
@@ -39,8 +53,18 @@
 }
 
 .btn {
-
+    align-items: center;
+    border: 0px;
+    background-color: lightslategrey;
+    border-radius: 50px;
+    color: coral;
+    font-size: xx-large;
+    font-weight: bold;
     height: 80px;
     width: 80px;
 
+}
+.btn:hover{
+    color: aliceblue;
+    background-color: black;
 }
