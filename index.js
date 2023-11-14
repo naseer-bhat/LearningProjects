@@ -9,10 +9,9 @@ function validateInput(item) {
   if (/([+*/-])\1+/.test(screen.value + item)) {
     return "";
   } else {
-    return item;
+    return +item;
   }
 }
-0;
 let flag = true;
 let changeTextButton = document.getElementById("q");
 let changedButton = document.getElementById("a");
